@@ -3,6 +3,7 @@
 namespace FireAPI;
 
 use FireAPI\Accounting\Accounting;
+use FireAPI\DedicatedServer\DedicatedServer;
 use FireAPI\Domain\Domain;
 use FireAPI\Exceptions\ParameterException;
 use FireAPI\RootServer\RootServer;
@@ -19,6 +20,7 @@ class Client
     private ?Accounting $accountingHandler = null;
     private ?Domain $domainHandler = null;
     private ?RootServer $rootServerHandler = null;
+    private ?DedicatedServer $dedicatedServerHandler = null;
 
     /**
      * Client constructor.
@@ -210,5 +212,15 @@ class Client
     public function rootServer(): RootServer
     {
         return $this->rootServerHandler ??= new RootServer($this);
+    }
+
+    /**
+     * Gets the dedicated server instance, initializing it if not already created.
+     *
+     * @return DedicatedServer The dedicated server instance.
+     */
+    public function dedicatedServer(): DedicatedServer
+    {
+        return $this->dedicatedServerHandler ??= new DedicatedServer($this);
     }
 }
