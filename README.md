@@ -43,11 +43,11 @@ You need an [API Key](https://24fire.de/reselling/) for that.
 require_once 'vendor/autoload.php';
 
 // Use the library namespace
-use 24fireAPI\24fireAPI;
+use FireAPI\FireAPI;
 
 // Then simply pass your API-Token when creating the API client object.
-$apiKey = getenv('24FIRE_API_KEY');
-$client = new 24fireAPI($apiKey);
+$token = getenv('24FIRE_API_KEY');
+$client = new FireAPI($token);
 
 // Then you are able to perform a request
 var_dump($client->servers()->getServers());
