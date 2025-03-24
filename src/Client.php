@@ -6,6 +6,7 @@ use FireAPI\Accounting\Accounting;
 use FireAPI\DedicatedServer\DedicatedServer;
 use FireAPI\Domain\Domain;
 use FireAPI\Exceptions\ParameterException;
+use FireAPI\IP\IP;
 use FireAPI\RootServer\RootServer;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
@@ -21,6 +22,7 @@ class Client
     private ?Domain $domainHandler = null;
     private ?RootServer $rootServerHandler = null;
     private ?DedicatedServer $dedicatedServerHandler = null;
+    private ?IP $IpHandler = null;
 
     /**
      * Client constructor.
@@ -222,5 +224,15 @@ class Client
     public function dedicatedServer(): DedicatedServer
     {
         return $this->dedicatedServerHandler ??= new DedicatedServer($this);
+    }
+
+    /**
+     * Retrieves the IP instance, initializing it if not already created.
+     *
+     * @return IP The IP instance.
+     */
+    public function ip(): IP
+    {
+        return $this->IpHandler ??= new IP($this);
     }
 }
