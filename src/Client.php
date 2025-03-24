@@ -16,6 +16,10 @@ class Client
     private Credentials $credentials;
     private string $token;
 
+    private ?Accounting $accountingHandler = null;
+    private ?Domain $domainHandler = null;
+    private ?RootServer $rootServerHandler = null;
+
     /**
      * Client constructor.
      *
