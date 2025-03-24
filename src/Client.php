@@ -10,13 +10,7 @@ use RuntimeException;
 class Client
 {
     private \GuzzleHttp\Client $httpClient;
-    private Credentials $credentials {
-        set(Credentials|string $value) {
-            $this->credentials = $value instanceof Credentials
-                ? $value
-                : new Credentials($value);
-        }
-    }
+    private Credentials $credentials;
     private string $token;
 
     /**
@@ -24,12 +18,13 @@ class Client
      *
      * @param string $token
      * @param \GuzzleHttp\Client|null $httpClient
+     * @param bool $sandbox
      */
-    public function __construct(string $token, ?\GuzzleHttp\Client $httpClient = null)
+    public function __construct(string $token, ?\GuzzleHttp\Client $httpClient = null, bool $sandbox = false)
     {
         $this->token = $token;
         $this->setHttpClient($httpClient);
-        $this->credentials = new Credentials($token);
+        $this->credentials = new Credentials($token, $sandbox);
     }
 
     /**

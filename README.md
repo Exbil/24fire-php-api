@@ -48,11 +48,13 @@ require_once 'vendor/autoload.php';
 // Use the library namespace
 use FireAPI\FireAPI;
 
-// Then simply pass your API-Token when creating the API client object.
+// Your API token
 $token = getenv('24FIRE_API_KEY');
-$client = new FireAPI($token);
 
-// Then you are able to perform a request
-var_dump($client->servers()->getServers());
+// Create the API client with the sandbox option
+$client = new FireAPI($token, true); // 'true' activates the sandbox environment
+
+// Request to the server in the sandbox environment
+var_dump($client->RootServer()->getAll());
 ?>
 ```
