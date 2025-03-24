@@ -34,7 +34,8 @@
     },
     "autoload": {
         "psr-4": {
-            "FireAPI\\": "src/"
+            "FireAPI\\": "src/",
+            "Tests\\": "tests/"
         }
     }
 }
