@@ -2,7 +2,10 @@
 
 namespace FireAPI;
 
+use FireAPI\Accounting\Accounting;
+use FireAPI\Domain\Domain;
 use FireAPI\Exceptions\ParameterException;
+use FireAPI\RootServer\RootServer;
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
@@ -20,7 +23,7 @@ class Client
      * @param \GuzzleHttp\Client|null $httpClient
      * @param bool $sandbox
      */
-    public function __construct(string $token, ?\GuzzleHttp\Client $httpClient = null, bool $sandbox = false)
+    public function __construct(string $token, bool $sandbox = false, ?\GuzzleHttp\Client $httpClient = null)
     {
         $this->token = $token;
         $this->setHttpClient($httpClient);
@@ -171,5 +174,37 @@ class Client
     {
         $response = $this->request($actionPath, $params, 'DELETE');
         return $this->processRequest($response);
+    }
+
+    /**
+     * Retrieve the accounting handler instance.
+     *
+     * If the accounting handler does not already exist, it initializes a new instance.
+     *
+     * @return Accounting
+     */
+    public function accounting(): Accounting
+    {
+        return $this->accountingHandler ??= new Accounting($this);
+    }
+
+    /**
+     * Retrieve the domain handler instance.
+     *
+     * @return Domain
+     */
+    public function domain(): Domain
+    {
+        return $this->domainHandler ??= new Domain($this);
+    }
+
+    /**
+     * Retrieves the RootServer instance. If the instance does not already exist, it initializes a new RootServer object.
+     *
+     * @return RootServer The instance of the RootServer.
+     */
+    public function rootServer(): RootServer
+    {
+        return $this->rootServerHandler ??= new RootServer($this);
     }
 }

@@ -55,6 +55,6 @@ $token = getenv('24FIRE_API_KEY');
 $client = new FireAPI($token, true); // 'true' activates the sandbox environment
 
 // Request to the server in the sandbox environment
-var_dump($client->RootServer()->getAll());
+var_dump($client->rootServer()->getAll());
 ?>
 ```
