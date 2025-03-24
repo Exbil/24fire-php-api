@@ -1,0 +1,40 @@
+{
+    "name": "exbil/24fire-php-api",
+    "description": "A full-featured implementation of the 24Fire API Client",
+    "minimum-stability": "stable",
+    "type": "library",
+    "keywords": [
+        "php-api-client",
+        "24fire-api",
+        "api-client",
+        "24fire",
+        "rest",
+        "php",
+        "api"
+    ],
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Efe Bagri",
+            "email": "composer@exbil.net",
+            "homepage": "https://www.exbil.net"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/exbil/24fire-php-api/issues",
+        "source": "https://github.com/exbil/24fire-php-api"
+    },
+    "require": {
+        "php": ">=8.4",
+        "guzzlehttp/guzzle": "^7.9.2",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.0.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "FireAPI\\": "src/"
+        }
+    }
+}
