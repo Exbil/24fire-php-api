@@ -7,7 +7,8 @@
 [![Latest Stable Version](http://poser.pugx.org/exbil/-php-api/v)](https://packagist.org/packages/exbil/-php-api) [![Total Downloads](http://poser.pugx.org/exbil/-php-api/downloads)](https://packagist.org/packages/exbil/-php-api) [![Latest Unstable Version](http://poser.pugx.org/exbil/-php-api/v/unstable)](https://packagist.org/packages/exbil/-php-api) [![License](http://poser.pugx.org/exbil/24fire-php-api/license)](https://packagist.org/packages/vexura/24fire-api) [![PHP Version Require](http://poser.pugx.org/exbil/24fire-php-api/require/php)](https://packagist.org/packages/exbil/24fire-php-api)
 
 > [!NOTE]
-> Disclaimer: Unable to test `24fire+` exclusive features due to lack of subscription. If you encounter issues, please report them on GitHub.
+> Disclaimer: If you have a suggestion for a better name for a route, feel free to send your proposal via email
+> to [composer@exbil.net](mailto:composer@exbil.net) or create a pull request.
 
 # Getting Started
 ### Requirements
