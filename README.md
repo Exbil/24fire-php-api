@@ -6,6 +6,9 @@
 
 [![Latest Stable Version](http://poser.pugx.org/exbil/-php-api/v)](https://packagist.org/packages/exbil/-php-api) [![Total Downloads](http://poser.pugx.org/exbil/-php-api/downloads)](https://packagist.org/packages/exbil/-php-api) [![Latest Unstable Version](http://poser.pugx.org/exbil/-php-api/v/unstable)](https://packagist.org/packages/exbil/-php-api) [![License](http://poser.pugx.org/exbil/24fire-php-api/license)](https://packagist.org/packages/vexura/24fire-api) [![PHP Version Require](http://poser.pugx.org/exbil/24fire-php-api/require/php)](https://packagist.org/packages/exbil/24fire-php-api)
 
+> [!NOTE]
+> Disclaimer: Unable to test `24fire+` exclusive features due to lack of subscription. If you encounter issues, please report them on GitHub.
+
 # Getting Started
 ### Requirements
 * [**PHP 8.4+**](https://www.php.net/downloads.php)
