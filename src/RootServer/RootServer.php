@@ -81,13 +81,13 @@ class RootServer
 
     /**
      * @param int $vm_id
-     * @return bool
+     * @return mixed
      * @throws GuzzleException
      */
-    public function isMountedIso(int $vm_id): bool
+    public function getMountedIso(int $vm_id): mixed
     {
         $this->validateVMId($vm_id);
-        return $this->client->get("vm/{$vm_id}/config")['data']['config']['iso']['attached'] ?? false;
+        return $this->client->get("vm/{$vm_id}/config")['data']['config']['iso'];
     }
 
     /**
