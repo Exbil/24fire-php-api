@@ -465,44 +465,52 @@ class RootServer
     }
 
     /**
-     * Creates a new virtual machine with the specified configuration.
-     *
-     * @param int $cores Number of CPU cores for the virtual machine
-     * @param int $ram Amount of RAM in GB for the virtual machine
-     * @param int $disk Storage space in GB for the virtual machine
-     * @param int $ipv4 Number of IPv4 addresses to assign
-     * @param int $ipv6 Number of IPv6 addresses to assign
-     * @param int $os_id Operating system ID to install
-     * @param int $backups Number of backup slots to allocate
-     * @param string|null $host_name The hostname for the virtual machine (optional)
-     * @param string|null $custom_name Custom name for the virtual machine (optional)
-     * @param string|null $root_password Root password for the virtual machine (optional)
-     * @return mixed Response from the API containing the created virtual machine details
+     * @param int $cores
+     * @param int $ram
+     * @param int $disk
+     * @param string $os
+     * @param string $hostsystem
+     * @param int|null $ips
+     * @param int|null $backups
+     * @param int|null $network_speed
+     * @param string|null $hostname
+     * @param int|null $storage
+     * @param string|null $ssh_key
+     * @param string|null $ssh_jey_displayname
+     * @param bool|null $allowFallbackIPs
+     * @return mixed
      * @throws GuzzleException
      */
     public function create(
         int $cores,
         int $ram,
         int $disk,
-        int $ipv4,
-        int $ipv6,
-        int $os_id,
-        int $backups,
-        ?string $host_name = null,
-        ?string $custom_name = null,
-        ?string $root_password = null
+        string $os,
+        string $hostsystem,
+        ?int $ips = null,
+        ?int $backups = null,
+        ?int $network_speed = null,
+        ?string $hostname = null,
+        ?int $storage = null,
+        ?string $ssh_key = null,
+        ?string $ssh_key_displayname = null,
+        ?bool $allowFallbackIPs = null,
+
     ): mixed {
         $params = array_filter([
             'cores' => $cores,
             'ram' => $ram,
             'disk' => $disk,
-            'ipv4' => $ipv4,
-            'ipv6' => $ipv6,
-            'os_id' => $os_id,
-            'backups' => $backups,
-            'hostname' => $host_name,
-            'custom_name' => $custom_name,
-            'root_password' => $root_password
+            'os' => $os,
+            'hostsystem' => $hostsystem,
+            'ips' => $ips,
+            'backup_slots' => $backups,
+            'network_speed' => $network_speed,
+            'hostname' => $hostname,
+            'storage' => $storage,
+            'ssh_key' => $ssh_key,
+            'ssh_key_displayname' => $ssh_key_displayname,
+            'allowFallbackIPs' => $allowFallbackIPs,
         ]);
 
         return $this->client->post('vm/create', $params);
