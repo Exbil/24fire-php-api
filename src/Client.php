@@ -50,8 +50,8 @@ class Client
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . $this->token,
-                'User-Agent' => 'YourResellingClient/1.0'
+                'X-FIRE-APIKEY' => $this->token,
+                'User-Agent' => 'FireClient/1.0',
             ],
             'allow_redirects' => false,
             'timeout' => 120
