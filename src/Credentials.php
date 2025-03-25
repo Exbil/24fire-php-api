@@ -22,7 +22,7 @@ class Credentials
     public function __construct(string $token, bool $sandbox = false)
     {
         $this->token = $token;
-        $this->baseUrl = $sandbox ? "https://sandbox.fireapi.de/" : "https://live.fireapi.de/";
+        $this->baseUrl = $sandbox ? "https://sandbox.fireapi.de" : "https://live.fireapi.de";
     }
 
 }
