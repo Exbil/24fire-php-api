@@ -24,5 +24,4 @@ class Credentials
         $this->token = $token;
         $this->baseUrl = $sandbox ? "https://sandbox.fireapi.de" : "https://live.fireapi.de";
     }
-
 }
